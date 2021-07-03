@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_cloning/Colors.dart';
 import 'package:instagram_cloning/bottombar_widget.dart';
+import 'package:instagram_cloning/post_widget.dart';
 import 'package:instagram_cloning/story.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,19 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          leading: Icon(
-            Icons.camera_alt_outlined,
-            size: 40,
-            color: Colors.grey,
-          ),
-          titleSpacing: 4,
+          backgroundColor: appBarColor,
           title: Text(
             'KellerGram',
             style: TextStyle(
               decoration: TextDecoration.none,
               fontFamily: 'Billabong',
               fontSize: 30,
+              fontWeight: FontWeight.bold,
             ),
           ),
           actions: [
@@ -39,13 +38,21 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(
               onPressed: () {},
               icon: Image.asset(
-                'assets/assets/images/noun_direct message_2796195.png',
-                width: 60,
+                'assets/assets/images/icons8-envoi-de-courriel-24.png',
+                width: 40,
               ),
             ),
           ],
         ),
-        body: StoryWidjet(),
+        body: Column(
+          children: [
+            StoryWidjet(),
+            Divider(
+              color: Colors.grey,
+            ),
+            PostWidget(),
+          ],
+        ),
         bottomNavigationBar: BottomWidjetApp());
   }
 }

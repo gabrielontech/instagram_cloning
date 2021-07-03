@@ -1,32 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_cloning/post_json.dart';
 
 class StoryWidjet extends StatelessWidget {
   const StoryWidjet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> story = [
-      'assets/assets/images/moi.jpg',
-      'assets/assets/images/lewa.jpg',
-      'assets/assets/images/steve.jpg',
-      'assets/assets/images/mysa.jpg',
-      'assets/assets/images/lia.jpg',
-      'assets/assets/images/noemie.jpg',
-      'assets/assets/images/bradley.jpg',
-      'assets/assets/images/Slohann.jpg',
-      'assets/assets/images/lewa.jpg',
-      'assets/assets/images/steve.jpg',
-      'assets/assets/images/mysa.jpg',
-      'assets/assets/images/lia.jpg',
-      'assets/assets/images/noemie.jpg',
-      'assets/assets/images/bradley.jpg',
-      'assets/assets/images/Slohann.jpg',
-    ];
-
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(9.0),
+          padding: const EdgeInsets.only(top: 9.0),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -34,41 +17,53 @@ class StoryWidjet extends StatelessWidget {
               children: List.generate(story.length, (index) {
                 return Padding(
                   padding: const EdgeInsets.all(6.0),
-                  child: Container(
-                    width: 67,
-                    height: 67,
-                    padding: EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Color(0xFF9B2282), Color(0xFFEEA863)]),
-                    ),
-                    child: Container(
-                      width: 67,
-                      height: 67,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 67,
+                        height: 67,
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF9B2282), Color(0xFFEEA863)]),
+                        ),
                         child: Container(
-                          width: 60,
-                          height: 60,
+                          width: 67,
+                          height: 67,
                           decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(color: Colors.grey, spreadRadius: 1)
-                            ],
+                            color: Colors.white,
                             shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage('${story[index]}'),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(color: Colors.grey, spreadRadius: 1)
+                                ],
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage('${story[index]["images"]}'),
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: Text(
+                          '${story[index]["username"]}',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
                 );
               }),
