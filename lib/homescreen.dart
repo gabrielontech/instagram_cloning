@@ -3,6 +3,7 @@ import 'package:instagram_cloning/Colors.dart';
 import 'package:instagram_cloning/bottombar_widget.dart';
 import 'package:instagram_cloning/post_widget.dart';
 import 'package:instagram_cloning/story.dart';
+import 'package:instagram_cloning/profil.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: appBarColor,
           title: Text(
             'KellerGram',
@@ -44,14 +46,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        body: Column(
-          children: [
-            StoryWidjet(),
-            Divider(
-              color: Colors.grey,
-            ),
-            PostWidget(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              StoryWidjet(),
+              Divider(
+                color: Colors.grey,
+              ),
+              PostWidget(),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomWidjetApp());
   }
