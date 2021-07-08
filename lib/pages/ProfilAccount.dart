@@ -124,7 +124,7 @@ class ProfilInfo extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, left: 12),
+                padding: const EdgeInsets.only(top: 6, left: 12),
                 child: Container(
                   child: Text(
                     "Web / Mobile Developer ",
@@ -137,6 +137,65 @@ class ProfilInfo extends StatelessWidget {
               ),
             ],
           )
+        ],
+      ),
+      Row(
+        children: [
+          Expanded(
+            flex: 14,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 12.0,
+                left: 12,
+              ),
+              child: Container(
+                  child: OutlinedButton(
+                      onPressed: () {},
+                      child: Container(
+                          width: 300,
+                          child: Center(
+                              child: Text(
+                            "Modifier le profil",
+                            style: TextStyle(color: Colors.white),
+                          ))),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          width: 0.8,
+                          color: Colors.grey.shade600,
+                        ),
+                      ))),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+          ),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 12.0,
+              ),
+              child: Container(
+                  child: OutlinedButton(
+                      onPressed: () {},
+                      child: Container(
+                          width: 10,
+                          child: Center(
+                            child: Text(
+                              ">",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          )),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          width: 0.8,
+                          color: Colors.grey.shade600,
+                        ),
+                      ))),
+            ),
+          ),
         ],
       )
     ]);
