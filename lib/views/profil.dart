@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'Colors.dart';
-import 'ProfilAccount.dart';
-import 'bottombar_widget.dart';
+import '../style/color.dart';
+import 'profil_account.dart';
+import '../widgets/bottombar_widget.dart';
 
-class ProfilApp extends StatelessWidget {
-  const ProfilApp({Key? key}) : super(key: key);
+class ProfilScreen extends StatelessWidget {
+  const ProfilScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ProfilApp extends StatelessWidget {
         backgroundColor: appBarColor,
         title: Row(
           children: [
-            Text(
+            const Text(
               'GabrielKeller',
               style: TextStyle(
                 decoration: TextDecoration.none,
@@ -36,14 +36,14 @@ class ProfilApp extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.add_box_outlined,
               size: 30,
             ),
           ),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.menu,
                 size: 30,
               )),

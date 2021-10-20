@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/Colors.dart';
-import 'package:instagram_cloning/homescreen.dart';
-import 'package:instagram_cloning/profil.dart';
+import 'package:instagram_cloning/style/color.dart';
+import 'package:instagram_cloning/views/views_export.dart';
 
 class BottomWidjetApp extends StatelessWidget {
   const BottomWidjetApp({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class BottomWidjetApp extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
                 icon: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.home_outlined,
                     color: Colors.white,
                   ),
@@ -32,7 +31,7 @@ class BottomWidjetApp extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.search,
                     color: Colors.white,
                   ),
@@ -50,10 +49,12 @@ class BottomWidjetApp extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: IconButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ProfilApp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfilScreen()));
                   },
-                  icon: CircleAvatar(
+                  icon: const CircleAvatar(
                     backgroundImage: AssetImage('assets/assets/images/moi.jpg'),
                   ),
                 ),

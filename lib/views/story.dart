@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/post_json.dart';
+import 'package:instagram_cloning/repository/post_json.dart';
 
 class StoryWidjet extends StatelessWidget {
   const StoryWidjet({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class StoryWidjet extends StatelessWidget {
                         width: 67,
                         height: 67,
                         padding: EdgeInsets.all(4),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
@@ -33,7 +33,7 @@ class StoryWidjet extends StatelessWidget {
                         child: Container(
                           width: 67,
                           height: 67,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
                           ),
@@ -43,7 +43,7 @@ class StoryWidjet extends StatelessWidget {
                               width: 60,
                               height: 60,
                               decoration: BoxDecoration(
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(color: Colors.grey, spreadRadius: 1)
                                 ],
                                 shape: BoxShape.circle,

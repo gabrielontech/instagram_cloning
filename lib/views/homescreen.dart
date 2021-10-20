@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/Colors.dart';
-import 'package:instagram_cloning/bottombar_widget.dart';
-import 'package:instagram_cloning/post_widget.dart';
-import 'package:instagram_cloning/story.dart';
-import 'package:instagram_cloning/profil.dart';
+import 'package:instagram_cloning/style/style_export.dart';
+import 'package:instagram_cloning/widgets/widgets_export.dart';
+import 'views_export.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,19 +18,17 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: appBarColor,
-          title: Text(
-            'KellerGram',
+          title: const Text(
+            "KellerGram",
             style: TextStyle(
-              decoration: TextDecoration.none,
-              fontFamily: 'Billabong',
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+                fontSize: 30,
+                fontFamily: 'billabong',
+                fontWeight: FontWeight.bold),
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.favorite_border_outlined,
                 size: 35,
               ),
@@ -48,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: [
+            children: const [
               StoryWidjet(),
               Divider(
                 color: Colors.grey,
@@ -57,6 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomWidjetApp());
+        bottomNavigationBar: const BottomWidjetApp());
   }
 }

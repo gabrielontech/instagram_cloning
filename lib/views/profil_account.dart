@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/Colors.dart';
-import 'package:instagram_cloning/bottombar_widget.dart';
-import 'package:instagram_cloning/post_widget.dart';
-import 'package:instagram_cloning/story.dart';
-import 'package:instagram_cloning/post_json.dart';
-import 'package:instagram_cloning/profil.dart';
+import 'package:instagram_cloning/repository/post_json.dart';
 
 class ProfilInfo extends StatelessWidget {
   const ProfilInfo({Key? key}) : super(key: key);
@@ -28,80 +23,74 @@ class ProfilInfo extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 15),
+          const SizedBox(width: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Column(
-                  children: [
-                    Text(
-                      '2',
+              Column(
+                children: const [
+                  Text(
+                    '2',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(3.0),
+                    child: Text(
+                      "Publications",
                       style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(
-                        "Publications",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(width: 10),
-              Container(
-                child: Column(
-                  children: [
-                    Text(
-                      '434,2 mio',
+              const SizedBox(width: 10),
+              Column(
+                children: const [
+                  Text(
+                    '434,2 mio',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Text(
+                      "Abonnés",
                       style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(
-                        "Abonnés",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 13),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(width: 10),
-              Container(
-                child: Column(
-                  children: [
-                    Text(
-                      '96',
+              const SizedBox(width: 10),
+              Column(
+                children: const [
+                  Text(
+                    '96',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Text(
+                      "Abonnements",
                       style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(
-                        "Abonnements",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

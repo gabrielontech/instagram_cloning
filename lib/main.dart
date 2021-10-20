@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/homescreen.dart';
+import 'package:instagram_cloning/views/homescreen.dart';
 
 void main() {
   runApp(const MyApp());
