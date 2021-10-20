@@ -52,7 +52,7 @@ class BottomWidjetApp extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ProfilScreen()));
+                            builder: (context) => const ProfilScreen()));
                   },
                   icon: const CircleAvatar(
                     backgroundImage: AssetImage('assets/assets/images/moi.jpg'),

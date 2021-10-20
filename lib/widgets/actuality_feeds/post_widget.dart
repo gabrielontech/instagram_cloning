@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_cloning/repository/post_json.dart';
+import 'package:instagram_cloning/repository/repo_export.dart';
+
+import '../widgets_export.dart';
 
 class PostWidget extends StatelessWidget {
-  const PostWidget({Key? key}) : super(key: key);
+  final int id;
+  final String whoLikeIt;
+  final String likeNumber;
+  final String nbCommentary;
+  final String consumerCommentary;
 
-//Le projet n'est pas refactorisé, une objet sera crée pour simplifié l'ajout des post avec utilisateur pour eviter trop de ligne
+  const PostWidget({
+    Key? key,
+    required this.id,
+    required this.whoLikeIt,
+    required this.likeNumber,
+    required this.nbCommentary,
+    required this.consumerCommentary,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +38,14 @@ class PostWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: AssetImage('${story[4]['images']}'),
+                          image: AssetImage('${story[id]['images']}'),
                           fit: BoxFit.cover)),
                 ),
                 const SizedBox(
                   width: 15,
                 ),
                 Text(
-                  '${story[4]['username']}',
+                  '${story[id]['username']}',
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 15,
@@ -57,7 +70,7 @@ class PostWidget extends StatelessWidget {
           height: 370,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('${story[4]['post']}'), fit: BoxFit.cover),
+                image: AssetImage('${story[id]['post']}'), fit: BoxFit.cover),
           ),
         ),
         const SizedBox(
@@ -101,58 +114,28 @@ class PostWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        Row(
-          children: [
-            RichText(
-                text: TextSpan(children: [
-              TextSpan(
-                text: "Aimé par ",
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
-              ),
-              TextSpan(
-                  text: "Gabrielkeller",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15)),
-              TextSpan(
-                  text: " et ",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15)),
-              TextSpan(
-                  text: " 3 154 755 autres ",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15))
-            ])),
-          ],
-        ),
+        CommentaryFieldWidgets(whoLikeit: whoLikeIt, numberOfLike: likeNumber),
         Row(children: [
           RichText(
-              text: TextSpan(children: [
+              text: const TextSpan(children: [
             TextSpan(
                 text: "personnes ",
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15)),
           ]))
         ]),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
-        Row(
-          children: [
-            RichText(
-                text: TextSpan(children: [
-              TextSpan(
-                  text: "Lia",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15)),
-              TextSpan(
-                  text:
-                      "   Merci @GabrielKeller pour cette photo, love u bro <3",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15)),
-            ])),
-          ],
-        ),
-        SizedBox(height: 8),
+        ConsumerAnswerWidget(
+            consumer: '${story[id]['username']}',
+            commentary: consumerCommentary),
+        const SizedBox(height: 8),
         Row(
           children: [
             Padding(
               padding: EdgeInsets.only(left: 0, right: 15),
               child: Text(
-                "Voir les 19 345 commentaires",
+                "Voir " + nbCommentary + " commentaires",
                 style: TextStyle(
                     color: Colors.white.withOpacity(0.4),
                     fontWeight: FontWeight.w400,
@@ -161,7 +144,7 @@ class PostWidget extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
       ],
     );
   }

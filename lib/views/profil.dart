@@ -49,8 +49,8 @@ class ProfilScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: ProfilAccount(),
-      bottomNavigationBar: BottomWidjetApp(),
+      body: const ProfilAccount(),
+      bottomNavigationBar: const BottomWidjetApp(),
     );
   }
 }
