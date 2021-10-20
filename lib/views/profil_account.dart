@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_cloning/repository/post_json.dart';
 
-class ProfilInfo extends StatelessWidget {
-  const ProfilInfo({Key? key}) : super(key: key);
+class ProfilAccount extends StatelessWidget {
+  const ProfilAccount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

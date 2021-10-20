@@ -49,7 +49,7 @@ class ProfilScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: ProfilInfo(),
+      body: ProfilAccount(),
       bottomNavigationBar: BottomWidjetApp(),
     );
   }
