@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_cloning/repository/repo_export.dart';
-
 import '../widgets_export.dart';
 
 class PostWidget extends StatelessWidget {

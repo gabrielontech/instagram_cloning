@@ -7,9 +7,9 @@ List<dynamic> story = [
   },
   {
     "id": 2,
-    "images": 'assets/assets/images/lewa.jpg',
-    "username": 'lewandowski',
-    "post": ''
+    "images": 'assets/assets/images/MariSolPp.jpg',
+    "username": 'marisollsan',
+    "post": 'assets/assets/images/MariSolPost.jpg'
   },
   {
     "id": 3,

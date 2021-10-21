@@ -102,26 +102,22 @@ class ProfilAccount extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 16, left: 12, right: 70),
-                child: Container(
-                  child: Text(
-                    "Keller Inc",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                        fontSize: 16),
-                  ),
+                child: Text(
+                  "Keller Inc",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      fontSize: 16),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 6, left: 12),
-                child: Container(
-                  child: Text(
-                    "Web / Mobile Developer ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                        fontSize: 13),
-                  ),
+                child: Text(
+                  "Web / Mobile Developer ",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      fontSize: 13),
                 ),
               ),
             ],
@@ -137,22 +133,21 @@ class ProfilAccount extends StatelessWidget {
                 top: 12.0,
                 left: 12,
               ),
-              child: Container(
-                  child: OutlinedButton(
-                      onPressed: () {},
-                      child: Container(
-                          width: 300,
-                          child: Center(
-                              child: Text(
-                            "Modifier le profil",
-                            style: TextStyle(color: Colors.white),
-                          ))),
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          width: 0.8,
-                          color: Colors.grey.shade600,
-                        ),
+              child: OutlinedButton(
+                  onPressed: () {},
+                  child: SizedBox(
+                      width: 300,
+                      child: Center(
+                          child: Text(
+                        "Edit profil",
+                        style: TextStyle(color: Colors.white),
                       ))),
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                      width: 0.8,
+                      color: Colors.grey.shade600,
+                    ),
+                  )),
             ),
           ),
           SizedBox(
@@ -164,28 +159,94 @@ class ProfilAccount extends StatelessWidget {
               padding: const EdgeInsets.only(
                 top: 12.0,
               ),
-              child: Container(
-                  child: OutlinedButton(
-                      onPressed: () {},
-                      child: Container(
-                          width: 10,
-                          child: Center(
-                            child: Text(
-                              ">",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          )),
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          width: 0.8,
-                          color: Colors.grey.shade600,
+              child: OutlinedButton(
+                  onPressed: () {},
+                  child: Container(
+                      width: 10,
+                      child: Center(
+                        child: Text(
+                          ">",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w600),
                         ),
-                      ))),
+                      )),
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                      width: 0.8,
+                      color: Colors.grey.shade600,
+                    ),
+                  )),
             ),
           ),
         ],
+      ),
+      Row(
+        children: const [
+          Padding(
+            padding: EdgeInsets.only(top: 10, left: 12, right: 72),
+            child: Text(
+              "Story Highlights",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Divider(
+          height: 20.0,
+          color: Colors.grey.shade600,
+        ),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/assets/images/icons8-grid-32.png',
+                  width: 40,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(width: 5),
+          IconButton(
+            onPressed: () {},
+            icon: Image.asset(
+              'assets/assets/images/icons8-user-tag-64.png',
+              width: 30,
+            ),
+          )
+        ],
+      ),
+      Row(children: [
+        Container(
+          width: 190,
+          height: 1.5,
+          color: Colors.white,
+        )
+      ]),
+      Expanded(
+        child: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    'assets/assets/images/icons8-camera-50.png',
+                    width: 120,
+                  ),
+                ),
+                const Text("No Posts Yet",
+                    style: TextStyle(fontSize: 30, color: Colors.white)),
+              ]),
+        ),
       )
     ]);
   }
